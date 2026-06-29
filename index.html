@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz - Header e Formulário TaskFlow</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #2b2b3d;
+            padding: 30px;
+            width: 650px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #a5b4fc;
+        }
+
+        .subtitulo {
+            font-size: 0.95rem;
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+
+        .pergunta {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-left: 3px solid #a5b4fc;
+            background-color: #242436;
+            border-radius: 6px;
+        }
+
+        .pergunta p {
+            font-weight: bold;
+        }
+
+        code {
+            color: #a5b4fc;
+            background-color: #1e1e2f;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #a5b4fc;
+            color: #1e1e2f;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #818cf8;
+            transform: translateY(-2px);
+        }
+
+        #resultado {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #a5b4fc;
+        }
+
+        #linkRespostas {
+            margin-top: 15px;
+            word-break: break-all;
+        }
+
+        #linkRespostas a {
+            color: #a5b4fc;
+            font-weight: bold;
+        }
+
+        .correto {
+            color: #00ff7f;
+            font-weight: bold;
+        }
+
+        .errado {
+            color: #ff4040;
+            font-weight: bold;
+        }
+
+        .neutro {
+            color: #ffd166;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Quiz - Header e Formulário TaskFlow</h1>
+
+        <p class="subtitulo">
+            Responda às perguntas sobre estrutura HTML, contadores, funções JavaScript, classes CSS, flexbox e formulário oculto.
+        </p>
+
+        <form id="quizForm">
+
+            <div class="pergunta" id="q1box">
+                <p>1) No cabeçalho, cada contador usa um elemento parecido com este:</p>
+                <p><code>&lt;span class="badge fazer" id="fazerCount"&gt;0&lt;/span&gt;</code></p>
+                <p>Qual alternativa explica melhor a função combinada de <code>class</code> e <code>id</code> nesse caso?</p>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    O <code>id</code> serve para estilizar todos os badges juntos, enquanto as classes servem apenas para JavaScript
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    As classes ajudam na aparência visual do badge, e o <code>id</code> permite localizar aquele contador específico no JavaScript
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    O <code>id</code> e a <code>class</code> fazem exatamente a mesma coisa, então um deles poderia ser sempre removido
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    A classe <code>badge</code> serve para contar tarefas automaticamente, sem precisar de JavaScript
+                </label>
+            </div>
+
+            <div class="pergunta" id="q2box">
+                <p>2) Observe a função:</p>
+                <p><code>function mostrarFormulario() { formulario.style.display = "block"; titulo.focus(); }</code></p>
+                <p>O que acontece quando o botão <code>+ Nova Tarefa</code> chama essa função?</p>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    O formulário é apagado da tela e o contador total volta para zero
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    A página é recarregada e o usuário precisa digitar a tarefa novamente
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    O formulário aparece na tela e o cursor é direcionado para o campo de título
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    Todos os cards mudam automaticamente para a coluna Feito
+                </label>
+            </div>
+
+            <div class="pergunta" id="q3box">
+                <p>3) No CSS do formulário existe este trecho:</p>
+                <p><code>.form-card { display: none; }</code></p>
+                <p>Considerando também as funções <code>mostrarFormulario()</code> e <code>esconderFormulario()</code>, qual é a melhor interpretação?</p>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    O formulário começa escondido e só aparece quando o JavaScript altera seu <code>display</code>
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    O formulário fica invisível, mas ainda ocupa espaço fixo no layout da página
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    O formulário é removido definitivamente do HTML quando a página carrega
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    O formulário só será exibido se o usuário clicar diretamente no CSS
+                </label>
+            </div>
+
+            <div class="pergunta" id="q4box">
+                <p>4) Analise o trecho do cabeçalho:</p>
+                <p><code>display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;</code></p>
+                <p>Qual alternativa descreve melhor o objetivo desse conjunto de propriedades?</p>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    Transformar todo texto do cabeçalho em botão clicável
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    Fazer os elementos ficarem lado a lado, alinhados, espaçados e com quebra de linha quando faltar espaço
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    Impedir que o cabeçalho apareça em telas menores que 430px
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    Criar automaticamente os contadores de tarefas a partir das colunas
+                </label>
+            </div>
+
+            <div class="pergunta" id="q5box">
+                <p>5) Existe uma atenção importante entre o HTML e o CSS dos badges. No HTML aparecem classes como:</p>
+                <p><code>class="badge fazer"</code>, <code>class="badge andamento"</code> e <code>class="badge feito"</code></p>
+                <p>Mas no CSS mostrado aparecem:</p>
+                <p><code>.badge.fazer</code>, <code>.badge.feito</code> e <code>.badge.total</code></p>
+                <p>Qual seria a ação provável disso?</p>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    O JavaScript deixaria de reconhecer o botão <code>+ Nova Tarefa</code>
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    O formulário nunca poderia ser escondido com <code>display: none</code>
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    O navegador criaria automaticamente as classes que estão faltando
+                </label><br>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    Alguns badges aparecem com a cor esperada, porque os nomes das classes do HTML e do CSS estão iguais.
+                </label>
+            </div>
+
+            <button type="button" onclick="corrigir()">Enviar Respostas</button>
+
+        </form>
+
+        <p id="resultado"></p>
+
+        <p id="linkRespostas"></p>
+
+    </div>
+
+    <script>
+        function corrigir() {
+            const respostasCorretas = {
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "d"
+            };
+
+            let pontos = 0;
+            const total = Object.keys(respostasCorretas).length;
+            const form = document.getElementById("quizForm");
+
+            let params = [];
+
+            for (const q in respostasCorretas) {
+                const box = document.getElementById(q + "box");
+
+                const antigo = box.querySelector(".feedback");
+                if (antigo) antigo.remove();
+
+                const marcado = form.querySelector(`input[name="${q}"]:checked`);
+
+                const respostaAluno = marcado ? marcado.value : "nao_respondeu";
+
+                const acertou = respostaAluno === respostasCorretas[q];
+
+                if (acertou) {
+                    pontos++;
+                }
+
+                params.push(`${q}=${respostaAluno}`);
+                params.push(`${q}_status=${acertou ? "correto" : "errado"}`);
+
+                const feedback = document.createElement("p");
+                feedback.classList.add("feedback");
+
+                if (respostaAluno === "nao_respondeu") {
+                    feedback.textContent = "⚠️ Você não marcou nenhuma alternativa.";
+                    feedback.classList.add("neutro");
+                } else if (acertou) {
+                    feedback.textContent = "✅ Correto!";
+                    feedback.classList.add("correto");
+                } else {
+                    let respostaCorretaTexto = "";
+
+                    const inputs = box.querySelectorAll("label input");
+
+                    inputs.forEach(input => {
+                        if (input.value === respostasCorretas[q]) {
+                            respostaCorretaTexto = input.parentNode.textContent.trim();
+                        }
+                    });
+
+                    feedback.textContent = `❌ Errado. A resposta correta é: ${respostaCorretaTexto}`;
+                    feedback.classList.add("errado");
+                }
+
+                box.appendChild(feedback);
+            }
+
+            document.getElementById("resultado").textContent =
+                `Você acertou ${pontos} de ${total} questões.`;
+
+            params.push(`pontos=${pontos}`);
+            params.push(`total=${total}`);
+
+            const urlBase = window.location.origin + window.location.pathname;
+            const link = urlBase + "?" + params.join("&");
+
+            document.getElementById("linkRespostas").innerHTML =
+                `🔗 Link com respostas e status:<br><a href="${link}" target="_blank">${link}</a>`;
+        }
+    </script>
+
+</body>
+
+</html>
